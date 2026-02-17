@@ -1,8 +1,8 @@
 function onFormSubmit(e) {
   try {
     // --- 設定項目 ---
-    const calendarId = '4c6253d7b6867972c9b884453f8957229acd6d5631b4be2c5917bdb4b035be54@group.calendar.google.com';
-    const adminEmails = 'kawaguchigumi.0022@gmail.com, example1@gmail.com, example2@gmail.com'; // カンマ区切りで追加
+    const calendarId = 'example.calendar.google.com';
+    const adminEmails = 'example1@gmail.com, example2@gmail.com'; // カンマ区切りで追加
     // ---------------
 
     // eがundefinedの場合のエラーハンドリング
@@ -26,7 +26,7 @@ function onFormSubmit(e) {
     // 予約人数チェック（2人までOK、3人目はNG）
     if (events.length >= 2) {
       const userEmail = e.response.getRespondentEmail();
-      const errorSubject = '【予約不可】重機練習の予約が埋まっています';
+      const errorSubject = '【予約不可】予約が埋まっています';
       const errorBody = name + ' 様\n\n申し訳ありません。' + dateStr + ' ' + startTime + ' の枠はすでに2名の予約が入っているため、予約できませんでした。別の時間帯で再度お申し込みください。';
       
       if (userEmail) {
