@@ -1,5 +1,5 @@
-重機練習予約システム
-Google FormsとGoogle Calendarを連携した、重機練習の予約管理システムです。フォーム送信時に自動でカレンダーに予定を登録し、同時間帯の予約数を制限します。
+# 重機練習予約システム
+## Google FormsとGoogle Calendarを連携した、重機練習の予約管理システムです。フォーム送信時に自動でカレンダーに予定を登録し、同時間帯の予約数を制限します。
 
 目次
 
@@ -28,31 +28,30 @@ Google FormsとGoogle Calendarを連携した、重機練習の予約管理シ�
 項目説明Google Workspaceアカウントが必要Google Formsフォームの作成権限Google Calendarカレンダーの編集権限Apps Scriptスクリプトの実行権限
 
 セットアップ手順
-Step 1: Google Formsの作成
+### Step 1: Google Formsの作成
 以下の質問項目を含むフォームを作成してください。
 項目名形式お名前記述式練習日日付開始時刻時刻終了時刻時刻
 
 重要: フォーム設定で「メールアドレスを収集する」を有効にしてください。
 
-Step 2: Google Calendarの準備
+### Step 2: Google Calendarの準備
 カレンダーIDの取得手順:
 
 予約管理用のカレンダーを作成（または既存のカレンダーを使用）
 カレンダーの設定を開く
 「カレンダーの統合」セクションでカレンダーIDをコピー
 
-Step 3: Apps Scriptの設定
+### Step 3: Apps Scriptの設定
 
 Google Formsを開き、右上の三点メニューから スクリプトエディタ を選択
 表示されたエディタに上記コードを貼り付け
 コード内の設定項目を編集
 
 javascript// --- 設定項目 ---
+```
 const calendarId = 'あなたのカレンダーID';
 const adminEmails = '管理者1@example.com, 管理者2@example.com';
-// ---------------
 ```
-
 4. プロジェクト名を設定（例: 重機練習予約システム）
 5. 保存アイコンをクリック
 
@@ -82,7 +81,6 @@ const adminEmails = '管理者1@example.com, 管理者2@example.com';
 ---
 
 ## 動作フロー
-```
 ユーザー → Google Forms送信
     ↓
 スクリプト自動実行
