@@ -29,7 +29,7 @@ function onFormSubmit(e) {
       throw new Error('カレンダーが見つかりません。IDを確認してください。');
     }
 
-    // 厳密な重複チェック
+    // 重複チェック
     const events = calendar.getEvents(start, end);
     const overlapping = events.filter(ev =>
       ev.getStartTime() < end && ev.getEndTime() > start
